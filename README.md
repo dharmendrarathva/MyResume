@@ -1,5 +1,2 @@
-## Resume
-[View My Resume](https://dharmendrarathva.github.io/Resume/Resume.html)
-
-https://dharmendrarathva.github.io/Resume/Resume.html
-
+# Resume
+View My Resume : myresume2025-henna.vercel.app
