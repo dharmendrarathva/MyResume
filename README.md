@@ -1,4 +1,4 @@
 # My Resume
 
-[View My Live Resume](https://myresume2025-henna.vercel.app/)
+[See My Skills And Tech Stack in Resume](https://myresume2025-henna.vercel.app/)
 
