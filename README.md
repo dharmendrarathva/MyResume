@@ -1,4 +1,4 @@
-# My Resume
-
-[See My Skills And Tech Stack in Resume]([https://myresume2025-henna.vercel.app/](https://my-resume-git-main-3dmmp.vercel.app/))
-
+## My Resume
+<a href="https://my-resume-git-main-3dmmp.vercel.app/" target="_blank" rel="noopener noreferrer" style="display:inline-block;padding:8px 14px;border-radius:6px;border:1px solid #0366d6;background:#0366d6;color:#fff;text-decoration:none;font-weight:600">
+  🔗 View my resume
+</a>
