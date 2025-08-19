@@ -31,8 +31,40 @@
         }
         .project-card:hover {
             transform: translateY(-5px);
-            border-left-color: #e1eaef;
+            border-left-color: #3b82f6;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: #3b82f6;
+        }
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        .resume-btn {
+            transition: all 0.3s ease;
+        }
+        .resume-btn:hover {
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -50,13 +82,20 @@
                     </p>
                 </div>
             </div>
-            <a href="#" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all flex items-center gap-2">
-                <i class="fas fa-download"></i>
-                <span class="hidden md:inline">Download Resume</span>
-            </a>
+            <div class="flex gap-3">
+                <!-- View Resume Button -->
+                <a href="https://drive.google.com/file/d/1j00mtx4BFClOYtaCis1tnEV418df60zM/view" 
+                   target="_blank"
+                   class="resume-btn bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all flex items-center gap-2">
+                    <i class="fas fa-eye"></i>
+                    <span class="hidden md:inline">See Resume</span>
+                </a>
+            
+            </div>
         </div>
     </header>
 
+    <!-- Rest of your content remains exactly the same -->
     <!-- Hero Section -->
     <section class="relative py-16 md:py-24 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 transform -skew-y-3"></div>
@@ -66,7 +105,7 @@
                     <span class="gradient-text">Hello, I'm Rathva Dharmendra</span>
                 </h2>
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Passionate IT Graduate skilled in full-stack development.
+                    Passionate IT Graduate skilled in full-stack development with expertise in MERN stack technologies.
                 </p>
                 <div class="mt-8 flex justify-center gap-4">
                     <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
@@ -80,8 +119,41 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- About Section -->
     <section class="py-12 md:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        <span class="gradient-text">About Me</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Passionate IT student seeking an opportunity to improve my skills in full-stack development. I aim to collaborate on projects that solve complex problems and make information more accessible and useful.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">
+                            <i class="fas fa-phone-alt mr-2"></i> +91 7621854573
+                        </div>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rathwadharmendra786@gmail.com" 
+                           class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium hover:bg-purple-200 transition">
+                            <i class="fas fa-envelope mr-2"></i> Email Me
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Education</h3>
+                    <div class="timeline-item">
+                        <h4 class="font-bold text-gray-800">Bachelor of Technology in Information Technology</h4>
+                        <p class="text-blue-600">Dharmsinh Desai University (DDU), Nadiad, Gujarat</p>
+                        <p class="text-gray-500">2022 - 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-12 md:py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -97,50 +169,53 @@
                     <i class="fab fa-cuttlefish text-4xl text-blue-500 mb-2"></i>
                     <span class="font-medium">C/C++</span>
                 </div>
-               <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
-                    <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
-                    <span class="font-medium">HTML5</span>
-                </div>
-                 <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
-                    <i class="fab fa-css3-alt text-4xl text-blue-400 mb-2"></i>
-                    <span class="font-medium">Basic CSS3</span>
-                </div>
-                <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
-                    <i class="fab fa-java text-4xl text-red-500 mb-2"></i>
-                    <span class="font-medium">Java</span>
-                </div>
-               
-            
-                <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
-                    <i class="fab fa-js-square text-4xl text-yellow-400 mb-2"></i>
-                    <span class="font-medium">Basic JavaScript</span>
-                </div>
+
                 <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
                     <i class="fab fa-react text-4xl text-blue-400 mb-2"></i>
                     <span class="font-medium">React.js</span>
                 </div>
-                <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
-                    <i class="fas fa-database text-4xl text-green-500 mb-2"></i>
-                    <span class="font-medium">MongoDB</span>
-                </div>
+                
                 <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
                     <i class="fab fa-node-js text-4xl text-green-600 mb-2"></i>
                     <span class="font-medium">Node.js</span>
                 </div>
+                
+                <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
+                    <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+                    <span class="font-medium">HTML5</span>
+                </div>
+                
+                <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
+                    <i class="fab fa-css3-alt text-4xl text-blue-400 mb-2"></i>
+                    <span class="font-medium">CSS3</span>
+                </div>
+                
+                <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
+                    <i class="fab fa-js-square text-4xl text-yellow-400 mb-2"></i>
+                    <span class="font-medium">JavaScript</span>
+                </div>
+                
+                <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
+                    <i class="fab fa-java text-4xl text-red-500 mb-2"></i>
+                    <span class="font-medium">Java</span>
+                </div>
+                
+                <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
+                    <i class="fas fa-database text-4xl text-green-500 mb-2"></i>
+                    <span class="font-medium">MongoDB</span>
+                </div>
+                
                 <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
                     <i class="fab fa-git-alt text-4xl text-orange-600 mb-2"></i>
                     <span class="font-medium">Git & GitHub</span>
                 </div>
-                 <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
-                <i class="fab fa-docker text-4xl text-blue-500 mb-2"></i>
-                <span class="font-medium">Docker</span>
-            </div>
+              
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-12 md:py-16 bg-gray-50">
+    <section id="projects" class="py-12 md:py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -151,67 +226,68 @@
                 </p>
             </div>
             
-          <div class="grid md:grid-cols-2 gap-8">
-    <!-- Project 1 -->
-    <div class="project-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
-        <div class="flex items-start mb-4">
-            <div class="bg-blue-100 p-3 rounded-lg mr-4">
-                <i class="fas fa-cube text-blue-600 text-xl"></i>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-cube text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">3D Model Marketplace</h3>
+                            <p class="text-sm text-gray-500">MERN Stack Project</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        A comprehensive platform for digital creators to showcase, sell, and purchase 3D models. 
+                        Features include user authentication, model previews, shopping cart, and secure payments.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React</span>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Node.js</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">MongoDB</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Express</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Cloudinary</span>
+                    </div>
+                    <a href="https://github.com/dharmendrarathva/3DModelMarketplace" target="_blank" 
+                       class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2">
+                        <i class="fab fa-github"></i> View on GitHub
+                        <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-images text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">PhotoStock Image Gallery</h3>
+                            <p class="text-sm text-gray-500">Frontend Project</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        An interactive image gallery featuring category filtering and search capabilities, 
+                        allowing users to efficiently locate images by title or author for downloading.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML5</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CSS3</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                    </div>
+                    <a href="https://github.com/dharmendrarathva/PhotoStock" target="_blank" 
+                       class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2">
+                        <i class="fab fa-github"></i> View on GitHub
+                        <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
             </div>
-            <div>
-                <h3 class="text-xl font-bold text-gray-800">3D Model Marketplace</h3>
-                <p class="text-sm text-gray-500">MERN Stack Project</p>
-            </div>
-        </div>
-        <p class="text-gray-600 mb-4">
-            A comprehensive platform for digital creators to showcase, sell, and purchase 3D models. 
-            Features include user authentication, model previews, shopping cart, and secure payments.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">React</span>
-            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Node.js</span>
-            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">MongoDB</span>
-            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Express</span>
-        </div>
-        <a href="https://github.com/dharmendrarathva/3DModelMarketplace" target="_blank" 
-           class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2">
-            <i class="fab fa-github"></i> View on GitHub
-            <i class="fas fa-arrow-right ml-1"></i>
-        </a>
-    </div>
-    
-    <!-- Project 2 -->
-    <div class="project-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
-        <div class="flex items-start mb-4">
-            <div class="bg-purple-100 p-3 rounded-lg mr-4">
-                <i class="fas fa-laptop-code text-purple-600 text-xl"></i>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-gray-800">Portfolio Website</h3>
-                <p class="text-sm text-gray-500">Personal Project</p>
-            </div>
-        </div>
-        <p class="text-gray-600 mb-4">
-            A responsive personal portfolio website showcasing my skills, projects, and achievements. 
-            Built with modern web technologies and optimized for performance and accessibility.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-4">
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">HTML5</span>
-            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">CSS3</span>
-            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">JavaScript</span>
-            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
-        </div>
-        <a href="#" class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2">
-            <i class="fab fa-github"></i> Coming Soon
-            <i class="fas fa-hourglass-half ml-1"></i>
-        </a>
-    </div>
-</div>
         </div>
     </section>
 
     <!-- Achievements Section -->
-    <section class="py-12 md:py-16 bg-white">
+    <section class="py-12 md:py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -223,30 +299,30 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-code text-blue-600 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-2">100+ Problems Solved</h3>
                     <p class="text-gray-600">
-                        Successfully solved 100+ coding challenges on LeetCode, enhancing my problem-solving skills.
+                        Successfully solved 100+ coding challenges on LeetCode and HackerRank, enhancing my problem-solving skills.
                     </p>
                     <a href="https://leetcode.com/u/e1tWxcjkOF/" target="_blank" class="mt-4 inline-block text-blue-600 hover:text-blue-800 text-sm font-medium">
                         View Profile <i class="fas fa-external-link-alt ml-1"></i>
                     </a>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-university text-green-600 text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-2">B.Tech in IT</h3>
                     <p class="text-gray-600">
-                        Graduated with a Bachelor's degree in Information Technology from Dharmsinh Desai University.
+                        Pursuing Bachelor's degree in Information Technology from Dharmsinh Desai University.
                     </p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                     <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-project-diagram text-purple-600 text-2xl"></i>
                     </div>
@@ -262,42 +338,45 @@
         </div>
     </section>
 
-   <!-- Contact Section -->
-<section id="contact" class="py-12 md:py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-            <p class="text-lg opacity-90 max-w-2xl mx-auto">
-                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you!
-            </p>
-        </div>
-        
-      <div class="text-center">
-            <div class="inline-block bg-white/10 backdrop-blur-sm px-8 py-6 rounded-xl">
-                <h3 class="text-xl font-semibold mb-3">Contact me directly at:</h3>
-               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rathwadharmendra786@gmail.com" 
-           target="_blank"
-           class="text-2xl font-medium hover:underline transition-all">
-            rathwadharmendra786@gmail.com
-        </a>
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 md:py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-lg opacity-90 max-w-2xl mx-auto">
+                    I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you!
+                </p>
+            </div>
+            
+            <div class="text-center">
+                <div class="inline-block bg-white/10 backdrop-blur-sm px-8 py-6 rounded-xl">
+                    <h3 class="text-xl font-semibold mb-3">Contact me directly at:</h3>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rathwadharmendra786@gmail.com" 
+                       target="_blank"
+                       class="text-2xl font-medium hover:underline transition-all">
+                        rathwadharmendra786@gmail.com
+                    </a>
+                    <p class="mt-4">
+                        <i class="fas fa-phone-alt mr-2"></i> +91 7621854573
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8 gap-6">
+                <a href="https://github.com/dharmendrarathva" target="_blank" class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 shadow-md transition-all">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://leetcode.com/u/e1tWxcjkOF/" target="_blank" class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 shadow-md transition-all">
+                    <i class="fas fa-code text-xl"></i>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rathwadharmendra786@gmail.com" 
+                   target="_blank"
+                   class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 shadow-md transition-all">
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
             </div>
         </div>
-        
-       <div class="flex justify-center mt-8 gap-6">
-    <a href="https://github.com/dharmendrarathva" target="_blank" class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 shadow-md transition-all">
-        <i class="fab fa-github text-xl"></i>
-    </a>
-    <a href="https://leetcode.com/u/e1tWxcjkOF/" target="_blank" class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 shadow-md transition-all">
-        <i class="fas fa-code text-xl"></i>
-    </a>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rathwadharmendra786@gmail.com" 
-       target="_blank"
-       class="bg-white w-12 h-12 rounded-full flex items-center justify-center text-gray-800 hover:bg-gray-100 shadow-md transition-all">
-        <i class="fas fa-envelope text-xl"></i>
-    </a>
-</div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
@@ -308,20 +387,19 @@
                     <p class="text-gray-400">IT Graduate & Full Stack Developer</p>
                 </div>
                 <div class="flex gap-4">
-                    <a href="https://github.com/dharmendrarathva?tab=repositories" class="text-gray-400 hover:text-white transition">
+                    <a href="https://github.com/dharmendrarathva" class="text-gray-400 hover:text-white transition">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="https://leetcode.com/u/e1tWxcjkOF/" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-code"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition">
-                        <i class="fab fa-twitter"></i>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rathwadharmendra786@gmail.com" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-6 pt-6 text-center text-gray-400 text-sm">
-                © 2025 Rathva Dharmendra H. All rights reserved. 
-                <span class="block md:inline mt-2 md:mt-0">Built with <i class="fas fa-heart text-red-500"></i> and Tailwind CSS</span>
+                © 2025 All rights reserved. 
             </div>
         </div>
     </footer>
