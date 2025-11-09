@@ -66,17 +66,71 @@
         .resume-btn:hover {
             transform: translateY(-2px);
         }
+        
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-buttons a {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+            .timeline-item:before {
+                width: 10px;
+                height: 10px;
+            }
+            .timeline-item:after {
+                left: 4px;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .contact-info > div {
+                width: 100%;
+                text-align: center;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            .achievements-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .skills-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .project-card {
+                padding: 1rem;
+            }
+            .hero-text {
+                font-size: 1.5rem !important;
+            }
+        }
     </style>
 </head>
 <body class="text-gray-800 antialiased">
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50 backdrop-blur-sm bg-opacity-80">
-        <div class="max-w-6xl mx-auto flex justify-between items-center p-4 md:p-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center p-4 md:p-6 header-container">
             <div class="flex items-center gap-4">
                 <img src="https://res.cloudinary.com/ddpvhxnus/image/upload/v1744776362/3DMMP/file_tm05yv.png" alt="Profile" class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gray-200 object-cover shadow">
                 <div>
                     <h1 class="text-xl md:text-2xl font-bold text-gray-800">Rathva Dharmendra H</h1>
-                    <p class="text-xs md:text-sm text-gray-500 flex items-center gap-1">
+                    <p class="text-xs md:text-sm text-gray-500 flex items-center gap-1 justify-center md:justify-start">
                         <i class="fas fa-graduation-cap text-blue-500"></i>
                         B.Tech IT | Dharmsinh Desai University
                     </p>
@@ -89,25 +143,24 @@
                    class="resume-btn bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all flex items-center gap-2">
                     <i class="fas fa-eye"></i>
                     <span class="hidden md:inline">See Resume</span>
+                    <span class="md:hidden">Resume</span>
                 </a>
-            
             </div>
         </div>
     </header>
 
-    <!-- Rest of your content remains exactly the same -->
     <!-- Hero Section -->
-    <section class="relative py-16 md:py-24 overflow-hidden">
+    <section class="relative py-12 md:py-24 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 transform -skew-y-3"></div>
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                <h2 class="text-2xl md:text-5xl font-bold mb-4 hero-text">
                     <span class="gradient-text">Hello, I'm Rathva Dharmendra</span>
                 </h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-base md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     Passionate IT Graduate skilled in full-stack development with expertise in MERN stack technologies.
                 </p>
-                <div class="mt-8 flex justify-center gap-4">
+                <div class="mt-8 flex justify-center gap-4 hero-buttons">
                     <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-all shadow-md hover:shadow-lg flex items-center gap-2">
                         <i class="fas fa-paper-plane"></i> Contact Me
                     </a>
@@ -122,25 +175,25 @@
     <!-- About Section -->
     <section class="py-12 md:py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-6">
                         <span class="gradient-text">About Me</span>
                     </h2>
-                    <p class="text-lg text-gray-600 mb-6">
+                    <p class="text-base md:text-lg text-gray-600 mb-6">
                         Passionate IT student seeking an opportunity to improve my skills in full-stack development. I aim to collaborate on projects that solve complex problems and make information more accessible and useful.
                     </p>
-                    <div class="flex items-center gap-4">
-                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">
+                    <div class="flex flex-col sm:flex-row gap-4 contact-info">
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium text-center sm:text-left">
                             <i class="fas fa-phone-alt mr-2"></i> +91 7621854573
                         </div>
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rathwadharmendra786@gmail.com" 
-                           class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium hover:bg-purple-200 transition">
+                           class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium hover:bg-purple-200 transition text-center">
                             <i class="fas fa-envelope mr-2"></i> Email Me
                         </a>
                     </div>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-sm">
+                <div class="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-sm">
                     <h3 class="text-xl font-bold text-gray-800 mb-6">Education</h3>
                     <div class="timeline-item">
                         <h4 class="font-bold text-gray-800">Bachelor of Technology in Information Technology</h4>
@@ -156,15 +209,15 @@
     <section class="py-12 md:py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
                     <span class="gradient-text">Technical Skills</span>
                 </h2>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                <p class="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
                     Technologies I've worked with and mastered throughout my journey
                 </p>
             </div>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 skills-grid">
                 <div class="skill-badge bg-white p-4 rounded-xl shadow-md flex flex-col items-center justify-center border border-gray-100">
                     <i class="fab fa-cuttlefish text-4xl text-blue-500 mb-2"></i>
                     <span class="font-medium">C/C++</span>
@@ -209,7 +262,6 @@
                     <i class="fab fa-git-alt text-4xl text-orange-600 mb-2"></i>
                     <span class="font-medium">Git & GitHub</span>
                 </div>
-              
             </div>
         </div>
     </section>
@@ -218,27 +270,27 @@
     <section id="projects" class="py-12 md:py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
                     <span class="gradient-text">Featured Projects</span>
                 </h2>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                <p class="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
                     Some of my recent work and contributions
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
                 <!-- Project 1 -->
-                <div class="project-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+                <div class="project-card bg-white p-4 md:p-6 rounded-xl shadow-md hover:shadow-xl">
                     <div class="flex items-start mb-4">
                         <div class="bg-blue-100 p-3 rounded-lg mr-4">
                             <i class="fas fa-cube text-blue-600 text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-800">3D Model Marketplace</h3>
+                            <h3 class="text-lg md:text-xl font-bold text-gray-800">3D Model Marketplace</h3>
                             <p class="text-sm text-gray-500">MERN Stack Project</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         A comprehensive platform for digital creators to showcase, sell, and purchase 3D models. 
                         Features include user authentication, model previews, shopping cart, and secure payments.
                     </p>
@@ -250,24 +302,24 @@
                         <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Cloudinary</span>
                     </div>
                     <a href="https://github.com/dharmendrarathva/3DModelMarketplace" target="_blank" 
-                       class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2">
+                       class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2 text-sm md:text-base">
                         <i class="fab fa-github"></i> View on GitHub
                         <i class="fas fa-arrow-right ml-1"></i>
                     </a>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="project-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl">
+                <div class="project-card bg-white p-4 md:p-6 rounded-xl shadow-md hover:shadow-xl">
                     <div class="flex items-start mb-4">
                         <div class="bg-purple-100 p-3 rounded-lg mr-4">
                             <i class="fas fa-images text-purple-600 text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-gray-800">PhotoStock Image Gallery</h3>
+                            <h3 class="text-lg md:text-xl font-bold text-gray-800">PhotoStock Image Gallery</h3>
                             <p class="text-sm text-gray-500">Frontend Project</p>
                         </div>
                     </div>
-                    <p class="text-gray-600 mb-4">
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         An interactive image gallery featuring category filtering and search capabilities, 
                         allowing users to efficiently locate images by title or author for downloading.
                     </p>
@@ -277,7 +329,7 @@
                         <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">JavaScript</span>
                     </div>
                     <a href="https://github.com/dharmendrarathva/PhotoStock" target="_blank" 
-                       class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2">
+                       class="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center gap-2 text-sm md:text-base">
                         <i class="fab fa-github"></i> View on GitHub
                         <i class="fas fa-arrow-right ml-1"></i>
                     </a>
@@ -290,32 +342,31 @@
     <section class="py-12 md:py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
                     <span class="gradient-text">Achievements</span>
                 </h2>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                <p class="text-base md:text-lg text-gray-500 max-w-2xl mx-auto">
                     My coding milestones and accomplishments
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8 achievements-grid">
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-code text-blue-600 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">100+ Problems Solved</h3>
-                    <p class="text-gray-600">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">100+ Problems Solved</h3>
+                    <p class="text-gray-600 text-sm md:text-base">
                         Successfully solved 100+ coding challenges for enhancing my problem-solving skills.
                     </p>
-                   
                 </div>
                 
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-university text-green-600 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">B.Tech in IT</h3>
-                    <p class="text-gray-600">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">B.Tech in IT</h3>
+                    <p class="text-gray-600 text-sm md:text-base">
                         Pursuing Bachelor's degree in Information Technology from Dharmsinh Desai University.
                     </p>
                 </div>
@@ -324,8 +375,8 @@
                     <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-project-diagram text-purple-600 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">MERN Stack Projects</h3>
-                    <p class="text-gray-600">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-800 mb-2">MERN Stack Projects</h3>
+                    <p class="text-gray-600 text-sm md:text-base">
                         Developed full-stack applications using MongoDB, Express, React, and Node.js.
                     </p>
                     <a href="https://github.com/dharmendrarathva?tab=repositories" target="_blank" class="mt-4 inline-block text-blue-600 hover:text-blue-800 text-sm font-medium">
@@ -340,21 +391,21 @@
     <section id="contact" class="py-12 md:py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-                <p class="text-lg opacity-90 max-w-2xl mx-auto">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-base md:text-lg opacity-90 max-w-2xl mx-auto">
                     I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get back to you!
                 </p>
             </div>
             
             <div class="text-center">
-                <div class="inline-block bg-white/10 backdrop-blur-sm px-8 py-6 rounded-xl">
-                    <h3 class="text-xl font-semibold mb-3">Contact me directly at:</h3>
+                <div class="inline-block bg-white/10 backdrop-blur-sm px-4 md:px-8 py-6 rounded-xl w-full max-w-md">
+                    <h3 class="text-lg md:text-xl font-semibold mb-3">Contact me directly at:</h3>
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rathwadharmendra786@gmail.com" 
                        target="_blank"
-                       class="text-2xl font-medium hover:underline transition-all">
+                       class="text-lg md:text-2xl font-medium hover:underline transition-all break-words">
                         rathwadharmendra786@gmail.com
                     </a>
-                    <p class="mt-4">
+                    <p class="mt-4 text-base md:text-lg">
                         <i class="fas fa-phone-alt mr-2"></i> +91 7621854573
                     </p>
                 </div>
@@ -378,7 +429,7 @@
     <footer class="bg-gray-900 text-white py-8">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
                     <h3 class="text-xl font-bold">Rathva Dharmendra H</h3>
                     <p class="text-gray-400">IT Graduate & Full Stack Developer</p>
                 </div>
